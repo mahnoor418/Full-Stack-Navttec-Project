@@ -22,6 +22,8 @@ import AddtoCart from './components/AddtoCart';
 import BlogDetail from './Pages/BlogDetail';
 import Wishlist from './components/Wishlist';
 import ProductReview from './Pages/Reviews'
+import Newproducts from './Pages/newproducts'
+import NewProductdetail from './Pages/newProductdetail';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -51,6 +53,9 @@ function App() {
         <Route path="/Wishlist" element={<Wishlist />} />
         <Route path="/SingingUp" element={<SingingUp />} />
         <Route path='/login' element={<Login />} />
+        <Route path='/newproducts' element={<Newproducts />} />
+        <Route path='/newproductdetail/:id' element={< NewProductdetail />} />
+       
 
       </Routes>
    

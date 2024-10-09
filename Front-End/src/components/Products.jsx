@@ -120,6 +120,7 @@ const Product = () => {
     return (
 
         <div className='parent  flex '>
+            
             <section >
                 <Filters />
             </section>
