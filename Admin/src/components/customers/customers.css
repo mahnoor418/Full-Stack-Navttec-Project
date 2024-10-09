@@ -1,0 +1,35 @@
+.user-container {
+    padding: 20px;
+  
+    color: #ffffff; /* White text for contrast */
+    border-radius: 8px; /* Rounded corners */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures no spacing between cells */
+    margin-top: 20px;
+}
+
+.user-table th, .user-table td {
+    padding: 12px 15px; /* Padding for cells */
+    border: 1px solid #fff; /* White border for table cells */
+    text-align: left; /* Align text to the left */
+}
+
+.user-table th {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white for headers */
+}
+
+.user-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Hover effect for rows */
+}
+
+.error {
+    color: red;
+}

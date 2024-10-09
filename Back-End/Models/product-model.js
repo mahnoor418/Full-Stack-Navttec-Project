@@ -1,0 +1,37 @@
+import mongoose from "mongoose";
+import user from "./user-model.js";
+
+const productSchema = new mongoose.Schema({
+    
+    title : {
+        type: String,
+            
+    },
+    category:
+     { type: String,
+         required: true 
+    },
+    description : {
+        type : String,
+        required : true,
+        unique : true,
+    },
+    quantity : {
+        type : Number,
+        required : true,
+
+    },
+    price : {
+        type : Number,
+        required : true,
+    },
+    image : {
+        type : String,
+    }
+},
+ {
+    timestamps : true,
+})
+
+let product = mongoose.model("product", productSchema);
+export default product

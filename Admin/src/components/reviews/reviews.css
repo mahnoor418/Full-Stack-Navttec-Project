@@ -1,0 +1,56 @@
+.reviews-container {
+    padding: 20px;
+    background-color: #0b2647;
+    color: white;
+  }
+  
+  .reviews-container h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+  }
+  
+  .reviews-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+  }
+  
+  .reviews-table th, .reviews-table td {
+    padding: 12px 15px;
+    border: 1px solid #e74c3c;
+    text-align: left;
+    color: white;
+  }
+  
+  .reviews-table th {
+    background-color: #273c75;
+    font-weight: bold;
+  }
+  
+  .reviews-table tr:nth-child(even) {
+    background-color: #34495e;
+  }
+  
+  .reviews-table tr:nth-child(odd) {
+    background-color: #2c3e50;
+  }
+  
+  .delete-btn, .update-btn {
+    background-color: transparent;
+    border: none;
+    color: #e74c3c;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  
+  .update-btn {
+    color: #3498db;
+    margin-left: 10px;
+  }
+  
+  .delete-btn:hover, .update-btn:hover {
+    text-decoration: underline;
+  }
+  

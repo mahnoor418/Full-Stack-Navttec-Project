@@ -1,0 +1,100 @@
+import React from 'react'
+import { asset } from '../assets/assets';
+export const productsdata = [
+  {
+    id: 1,
+    title: 'Adventurous Eating',
+    author: 'James Dylan',
+    price: '$20.00',
+    rating: '5.0 / 5.0',
+    image: asset.bookcover1,
+  },
+  {
+    id: 2,
+    title: 'Beauty of Structures',
+    author: 'Jayden Judah',
+    price: '$40.00',
+    rating: '4.0 / 5.0',
+    image: asset.bookcover2,
+  },
+  {
+    id: 3,
+    title: 'Books For a Cause',
+    author: 'Jayden Judah',
+    price: '$10.00',
+    oldPrice: '$20.00',
+    discount: '50%',
+    rating: '5.0 / 5.0',
+    image: asset.bookcover5,
+  },
+  {
+    id: 4,
+    title: 'Erik Martin',
+    author: 'James Dylan',
+    price: '$20.00',
+    rating: '5.0 / 5.0',
+    image: asset.bookcover4,
+  },
+  {
+    id: 5,
+    title: 'Daffodills',
+    author: 'James Dylan',
+    price: '$20.00',
+    rating: '5.0 / 5.0',
+    image: asset.bookcover5,
+  },
+  {
+    id: 6,
+    title: 'Erik Martin',
+    author: 'James Dylan',
+    price: '$60.00',
+    rating: '5.0 / 5.0',
+    image: asset.bookcover6,
+  },
+  {
+    id: 7,
+    title: 'Erik Martin',
+    author: 'James Dylan',
+    price: '$60.00',
+    rating: '5.0 / 5.0',
+    image: asset.pd12,
+  },
+  {
+    id: 8,
+    title: 'Erik Martin',
+    author: 'James Dylan',
+    price: '$60.00',
+    rating: '5.0 / 5.0',
+    image: asset.pd11,
+  },
+];
+export const dailydeals = [
+  {
+    id: 1,
+    title: 'Adventurous Eating',
+    author: 'James Dylan',
+    price: '$20.00',
+    rating: '5.0 / 5.0',
+    image: asset.bookcover1,
+  },
+  {
+    id: 2,
+    title: 'Beauty of Structures',
+    author: 'Jayden Judah',
+    price: '$40.00',
+    rating: '4.0 / 5.0',
+    image: asset.bookcover2,
+  },
+  {
+    id: 3,
+    title: 'Books For a Cause',
+    author: 'Jayden Judah',
+    price: '$10.00',
+    oldPrice: '$20.00',
+    discount: '50%',
+    rating: '5.0 / 5.0',
+    image: asset.bookcover5,
+  },
+
+];
+

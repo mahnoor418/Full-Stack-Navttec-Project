@@ -1,0 +1,48 @@
+.order-container {
+    padding: 20px;
+  
+    color: #ffffff; /* White text for contrast */
+    border-radius: 8px; /* Rounded corners */
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.order-table {
+    width: 100%;
+    border-collapse: collapse; /* Ensures no spacing between cells */
+    margin-top: 20px;
+}
+
+.order-table th, .order-table td {
+    padding: 12px 15px; /* Padding for cells */
+    border: 1px solid #fff; /* White border for table cells */
+    text-align: left; /* Align text to the left */
+}
+
+.order-table th {
+    background-color: rgba(255, 255, 255, 0.1); /* Slightly transparent white for headers */
+}
+
+.order-table tbody tr:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Hover effect for rows */
+}
+
+.view-button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #ffffff; /* White background for the button */
+    color: #007bff; /* Blue text for the button */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+.view-button:hover {
+    background-color: #e7e7e7; /* Light grey on hover */
+}
+
+.error {
+    color: red;
+}

@@ -1,0 +1,126 @@
+body {
+  background-color: #001f3f;
+  color: #fff;
+  font-family: Arial, sans-serif;
+}
+
+.add {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: #002f6c; /* Added background color for the form */
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-img-upload {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.add-img-upload p {
+  margin-bottom: 0.5rem;
+  color: red;
+  font-weight: bold;
+}
+
+.add-img-upload input {
+  padding: 0.5rem;
+  border: 2px dashed red;
+  border-radius: 10px;
+  background-color: #fff;
+  color: #333;
+  cursor: pointer;
+  transition: border-color 0.3s;
+}
+
+.add-img-upload input:hover {
+  border-color: #ff6600;
+}
+
+.add-img-upload img {
+  width: 100%;
+  max-width: 200px;
+  border: 2px dashed red;
+  border-radius: 10px;
+  margin-top: 1rem;
+}
+
+.add-product-name,
+.add-product-description,
+.add-category-price,
+.add-product-quantity,
+.add-product-image {
+  margin-bottom: 1.5rem;
+}
+
+.add-product-name p,
+.add-product-description p,
+.add-product-quantity p,
+.add-product-image p {
+  margin-bottom: 0.5rem;
+  color: red;
+  font-weight: bold;
+}
+
+.add-product-name input,
+.add-product-description textarea,
+.add-category select,
+.add-price input,
+.add-product-quantity input,
+.add-img-upload input[type="file"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 2px solid red;
+  border-radius: 5px;
+  background-color: #fff;
+  color: #333;
+  transition: border-color 0.3s;
+}
+
+.add-product-name input:focus,
+.add-product-description textarea:focus,
+.add-category select:focus,
+.add-price input:focus,
+.add-product-quantity input:focus,
+.add-img-upload input[type="file"]:focus {
+  border-color: #ff6600;
+}
+
+.add-category-price {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.add-category,
+.add-price {
+  flex: 1;
+  margin-right: 10px;
+}
+
+.add-price {
+  margin-left: 10px;
+}
+
+.add-category:last-child,
+.add-price:last-child {
+  margin-right: 0;
+}
+
+.add-button {
+  padding: 0.75rem 1.5rem;
+  background-color: red;
+  color: #001f3f;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+}
+
+.add-button:hover {
+  background-color: #ff6600;
+}

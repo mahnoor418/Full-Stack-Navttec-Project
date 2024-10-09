@@ -1,0 +1,4 @@
+{
+    "presets": ["@vite/vite-plugin-react"],
+    "plugins": ["babel-plugin-styled-components"]
+  }
