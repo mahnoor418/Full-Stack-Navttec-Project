@@ -48,7 +48,9 @@ const Orders = () => {
             <table className="order-table">
                 <thead>
                     <tr>
-                        <th>Order ID</th>
+
+                        <th>Order ID</th> 
+                        <th>User_Id</th>
                         <th>Payment Method</th>
                         <th>Order Date</th>
                         <th>Delivery Date</th>
@@ -71,6 +73,7 @@ const Orders = () => {
                         orders.map((order) => (
                             <tr key={order._id}>
                                 <td>{`#ORDER ${order._id.slice(-3)}`}</td>
+                                <td>{order.userId}</td>
                                 <td>{order.paymentStatus === 'paid' ? 'Card' : 'Unpaid'}</td>
                                 <td>{formatDate(order.createdAt)}</td>
                                 <td>{formatDate(order.deliveryDate)}</td>

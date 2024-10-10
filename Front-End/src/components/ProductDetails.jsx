@@ -197,7 +197,8 @@ import Description from '../Pages/Description';
 import ShippingInfo from '../Pages/ShippingInfo';
 import { useCart } from '../components/CartContext';
 
-const ProductDetail = () => {
+const ProductDetail = ( productId) => {
+  const { id } = useParams();
   const { addItem } = useCart();
   const navigate = useNavigate();
   
@@ -206,9 +207,7 @@ const ProductDetail = () => {
     navigate('/AddtoCart');
   };
 
-  const handleReviewButtonClick = () => {
-    navigate('/review');
-  };
+  
 
   const handleBuyNow = () => {
     addItem(product);
@@ -216,7 +215,7 @@ const ProductDetail = () => {
   };
 
   const [activeSection, setActiveSection] = useState('description');
-  const { id } = useParams();
+ 
 
   const products = [
     { 
@@ -421,12 +420,9 @@ const ProductDetail = () => {
           >
             Shipping Information
           </button>
-          <button
-            className={`py-2 px-4 ${activeSection === 'reviews' ? 'bg-red-600' : 'bg-black'} text-white hover:bg-gray-800 focus:outline-none`}
-            onClick={handleReviewButtonClick}
-          >
-            Reviews
-          </button>
+          <Review productId={id} /> 
+       
+  
         </div>
 
         {/* Description Section */}
@@ -434,6 +430,7 @@ const ProductDetail = () => {
         
         {/* Shipping Information Section */}
         {activeSection === 'shipping' && (<ShippingInfo />)}
+
       </div>
     </div>
   );

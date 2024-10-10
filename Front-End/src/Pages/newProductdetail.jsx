@@ -15,14 +15,16 @@ const NewProductDetail = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [activeSection, setActiveSection] = useState('description');
+  
   const [quantity, setQuantity] = useState(1);
 
+  // Log the _id from useParams to check if it's being passed
   useEffect(() => {
     const fetchProduct = async () => {
       try {
         const response = await axios.get(`http://localhost:5000/product/getproduct/${_id}`);
         if (response.data.success) {
-          setProduct(response.data.product);
+          setProduct(response.data.productData);  // Use response.data.productData
         } else {
           setError("Product not found");
         }
@@ -34,6 +36,12 @@ const NewProductDetail = () => {
     };
     fetchProduct();
   }, [_id]); // Depend on _id, make sure to fetch the correct product by its ID
+  console.log("Product ID from params:", _id);
+
+  // const handlereview = () => {
+  //   console.log(_id);
+  //   navigate(`/reviews/${_id}`);
+  // };
 
   const handleAddToCart = () => {
     addItem(product);
@@ -48,6 +56,7 @@ const NewProductDetail = () => {
   if (loading) {
     return <p>Loading product...</p>;
   }
+  console.error("Error fetching product:", error);
 
   if (error) {
     return <p>{error}</p>;
@@ -114,9 +123,9 @@ const NewProductDetail = () => {
           </div>
 
           <div className="mt-6 text-gray-600 pt-7">
-            <p className='flex gap-4 font-bold'><FaCarOn />Estimated delivery: 5-7 days</p>
-            <p className='flex gap-4 font-bold'><FaSearch />197 People are viewing this right now</p>
-            <p className='flex gap-4 font-bold'><FaShare />Share</p>
+            <p className='flex gap-4 font-bold'>Estimated delivery: 5-7 days</p>
+            <p className='flex gap-4 font-bold'>197 People are viewing this right now</p>
+            <p className='flex gap-4 font-bold'>Share</p>
           </div>
         </div>
       </div>
@@ -136,19 +145,23 @@ const NewProductDetail = () => {
           >
             Shipping Information
           </button>
-          <button
+      
+          {/* <button
             className={`py-2 px-4 ${activeSection === 'reviews' ? 'bg-red-600' : 'bg-black'} text-white hover:bg-gray-800 focus:outline-none`}
-            onClick={() => setActiveSection('reviews')}
+            onClick={handlereview}
           >
             Reviews
-          </button>
+          </button> */}
         </div>
-
+        <Review productId={_id} />
         {/* Description Section */}
         {activeSection === 'description' && (<Description />)}
         
         {/* Shipping Information Section */}
         {activeSection === 'shipping' && (<ShippingInfo />)}
+        
+        {/* Review Section */}
+        {activeSection === 'reviews' && (<Review productId={_id} />)}
       </div>
     </div>
   );

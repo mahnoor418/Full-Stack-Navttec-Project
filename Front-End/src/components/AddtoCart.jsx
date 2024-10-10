@@ -177,7 +177,7 @@ import { toast } from 'react-toastify';
   
     return (
       <div key={item.productId} className="flex items-center bg-gray-100 p-4 rounded-lg">
-        <img src={item.image} alt={item.title} className="w-16 h-16 object-cover rounded-md" />
+        <img  src={`http://localhost:5000/upload/${product.image}`}alt={item.title} className="w-16 h-16 object-cover rounded-md" />
         <h3 className="text-lg font-semibold mx-4">{item.title}</h3>
         <p className="text-gray-600 mx-4">${Number(item.price).toFixed(2)}</p>
         <input

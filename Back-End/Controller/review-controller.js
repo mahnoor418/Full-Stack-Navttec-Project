@@ -1,25 +1,16 @@
 import Review from '../Models/review-model.js';
+import mongoose from 'mongoose';
 
 // Fetch all reviews for a product
 export const fetchAllReviews = async (req, res) => {
-  const { productId } = req.query;
-
-  if (!productId) {
-    return res.status(400).json({ message: "Product ID is required." });
-  }
-
   try {
-    const reviews = await Review.find({ productId }).populate('userId', 'username');
-    const hasReviewAdded = reviews.length > 0;
-
-    const averageRating = hasReviewAdded 
-      ? reviews.reduce((acc, review) => acc + review.stars, 0) / reviews.length 
-      : 0;
-
+    // Fetch all reviews, populate 'userId' with 'username', and only select required fields
+    const reviews = await Review.find()
+    
+    // Return reviews and average rating
     return res.status(200).json({
-      data: reviews,
-      averageRating: averageRating > 0 ? averageRating.toFixed(1) : 0,
-      hasReviewAdded,
+      reviews, // Return all reviews
+      
     });
   } catch (error) {
     console.error("Error fetching reviews:", error);
@@ -29,23 +20,29 @@ export const fetchAllReviews = async (req, res) => {
 
 // Add a new review
 export const addReview = async (req, res) => {
+
+  const userId = req.user.userId; // Get user ID from the request object
+   
   const { productId, stars, text } = req.body;
 
   if (!productId || !stars || !text) {
     return res.status(400).json({ message: "Product ID, rating, and text are required." });
   }
 
+  if (!mongoose.Types.ObjectId.isValid(productId)) {
+    return res.status(400).json({ message: "Invalid Product ID." });
+  }
+
   try {
     const newReview = new Review({
       productId,
-      userId: req.user.id, // Assuming req.user contains user info from authentication middleware
+      userId, // Ensure userId is included
       stars,
       text,
     });
 
     await newReview.save();
-
-    return res.status(201).json({ message: "Review added successfully." });
+    return res.status(201).json(newReview); // Return the newly created review object
   } catch (error) {
     console.error("Error adding review:", error);
     return res.status(500).json({ message: "Error adding review." });

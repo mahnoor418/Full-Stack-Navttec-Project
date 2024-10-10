@@ -10,7 +10,13 @@ const Reviews = () => {
       try {
         const response = await fetch('http://localhost:5000/review/fetchall');
         const data = await response.json();
-        setReviews(data);
+
+        if (response.ok) {
+          setReviews(data.reviews); // Set reviews data
+         
+        } else {
+          console.error(data.message);
+        }
       } catch (error) {
         console.error("Error fetching reviews:", error);
       }
@@ -22,11 +28,12 @@ const Reviews = () => {
   return (
     <div className="reviews-container">
       <h2>All Review List</h2>
+     
       <table className="reviews-table">
         <thead>
           <tr>
-            <th>User_Id</th>
-            <th>Product_ID</th>
+            <th>User</th>
+            <th>Product ID</th>
             <th>Review</th>
             <th>Rating</th>
           </tr>
@@ -35,15 +42,15 @@ const Reviews = () => {
           {reviews.length > 0 ? (
             reviews.map((review) => (
               <tr key={review._id}>
-                <td>{review.product_id}</td>
-                <td>{review.User_id}</td>
-                <td>{review.reviewText}</td>
-                <td>{review.rating}/5</td>
+                <td>{review.userId}</td>
+                <td>{review.productId}</td>
+                <td>{review.text}</td> {/* Assuming the text field holds the review text */}
+                <td>{review.stars}/5</td>
               </tr>
             ))
           ) : (
             <tr>
-              <td colSpan="2">No reviews found.</td>
+              <td colSpan="4">No reviews found.</td>
             </tr>
           )}
         </tbody>

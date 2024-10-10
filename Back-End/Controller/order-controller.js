@@ -4,7 +4,8 @@ export const createOrder = async (req, res) => {
     try {
         console.log('Request body:', req.body); // Log the incoming request body
 
-        const userId = req.user.id; // Assuming req.user is set by middleware after token verification
+       
+        const userId = req.user.userId; // Get user ID from the request object
         const { totalAmount, shipping, email, address, city, postalCode, creditCard , expirationDate , securityCode , nameOnCard } = req.body;
 
         // Get cart from the request body

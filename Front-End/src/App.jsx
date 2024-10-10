@@ -21,7 +21,7 @@ import SingingUp from './components/SingingUp';
 import AddtoCart from './components/AddtoCart';
 import BlogDetail from './Pages/BlogDetail';
 import Wishlist from './components/Wishlist';
-import ProductReview from './Pages/Reviews'
+import Review from './Pages/Reviews'
 import Newproducts from './Pages/newproducts'
 import NewProductdetail from './Pages/newProductdetail';
 import { ToastContainer } from 'react-toastify';
@@ -37,7 +37,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/Products" element={<Products />} />
         <Route path="/product/:id" element={<ProductDetails />} />
-        <Route path="/review" element={<ProductReview/>}/>
+      
+        <Route path="/reviews/:id" element={<Review/>} />
         <Route path="/Brands" element={<Brands />} />
         <Route path="/BestSeller" element={<BestSeller />} />
         <Route path="/AboutUs" element={<AboutUs />} />
@@ -54,7 +55,7 @@ function App() {
         <Route path="/SingingUp" element={<SingingUp />} />
         <Route path='/login' element={<Login />} />
         <Route path='/newproducts' element={<Newproducts />} />
-        <Route path='/newproductdetail/:id' element={< NewProductdetail />} />
+        <Route path='/newproductdetail/:_id' element={< NewProductdetail />} />
        
 
       </Routes>

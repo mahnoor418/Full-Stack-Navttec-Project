@@ -5,8 +5,8 @@ import { authenticate } from '../Middleware/user_middleware.js';
 
 let reviewRoute = express.Router();
 
-reviewRoute.post('/addreview', authenticate, addReview); // **Ensure authentication is applied**
-reviewRoute.get('/fetchall',  fetchAllReviews); // **Authentication added here for fetching**
+reviewRoute.post('/addreview', authenticate, addReview);
+reviewRoute.get('/fetchall',  fetchAllReviews); 
 
 export default reviewRoute;
 

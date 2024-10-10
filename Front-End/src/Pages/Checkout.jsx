@@ -30,7 +30,7 @@ const Checkout = () => {
   const handleSubmit = async () => {
     try {
       // Create order data
-      const userId = localStorage.getItem('userId'); // Adjust this if the ID is stored differently
+      
       const orderData = {
         cart: cartItems.map(item => ({
           productId: item.id, // Assuming `id` corresponds to productId
@@ -47,7 +47,7 @@ const Checkout = () => {
         expirationDate: formData.expirationDate,
         securityCode: formData.securityCode,
         nameOnCard: formData.nameOnCard,
-        userId // Include userId in the order data
+       
       };
 
       // Make API call to create order
